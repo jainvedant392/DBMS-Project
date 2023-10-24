@@ -1,5 +1,11 @@
-function App() {
-  return <h1>hello</h1>;
-}
+import React from 'react';
+import Routing from './Components/Routes';
+const App = () => {
+  return (
+    <>
+      <Routing />
+    </>
+  );
+};
 
 export default App;
