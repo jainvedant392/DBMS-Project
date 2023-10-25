@@ -6,6 +6,7 @@ import Account from '../Account';
 import SignUp from '../SignUp';
 import LogIn from '../LogIn';
 import Wallet from '../Wallet';
+import Market from '../Market';
 const Routing = () => {
   return (
     <>
@@ -13,6 +14,7 @@ const Routing = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/account" element={<Account />} />
+        <Route path="/market" element={<Market />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/wallet" element={<Wallet />} />
