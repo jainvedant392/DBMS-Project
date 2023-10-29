@@ -7,19 +7,19 @@ import SignUp from '../SignUp';
 import LogIn from '../LogIn';
 import Wallet from '../Wallet';
 import Market from '../Market';
-import Assets from '../Assets';
+import Testing from '../Testing';
 const Routing = () => {
   return (
     <>
       <NavBar />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/assets" element={<Assets />} />
         <Route path="/account" element={<Account />} />
         <Route path="/market" element={<Market />} />
         <Route path="/signup" element={<SignUp />} />
         <Route path="/login" element={<LogIn />} />
         <Route path="/wallet" element={<Wallet />} />
+        <Route path="/testing" element={<Testing />} />
       </Routes>
     </>
   );
