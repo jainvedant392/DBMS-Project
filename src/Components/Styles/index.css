@@ -202,3 +202,39 @@ nav {
     display: flex;
   }
 }
+.assets_container {
+  display: grid;
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* Adjust the number of columns based on your design */
+  gap: 10px; /* Adjust the gap between grid items */
+  border: 1px solid #000000;
+  padding: 3px; /* Add padding for better spacing */
+}
+
+.row-0,
+.row-1,
+.row-2,
+.row-3,
+.row-4,
+.row-5,
+.row-6,
+.row-7,
+.row-8,
+.row-9,
+.row-10 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr; /* Adjust the number of columns based on your design */
+  gap: 5px; /* Adjust the gap between grid items */
+  width: 100%;
+  padding: 5px 10px; /* Add padding for better spacing */
+}
+.col0,
+.col2,
+.col3,
+.col4,
+.col5,
+.col6 {
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+}
