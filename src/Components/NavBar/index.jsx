@@ -50,6 +50,9 @@ const NavBar = () => {
               Testing
             </Link>
             {/* For Testingn of Protection Of Routes */}
+            <Link to="/api" className="nav-link nav-testing">
+              API
+            </Link>
             <button onClick={LogOut}>Log Out</button>
           </div>
         </div>

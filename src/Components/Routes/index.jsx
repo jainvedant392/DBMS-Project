@@ -8,6 +8,7 @@ import LogIn from '../LogIn';
 import Wallet from '../Wallet';
 import Market from '../Market';
 import Testing from '../Testing';
+import Api from '../API/apio';
 const Routing = () => {
   return (
     <>
@@ -20,6 +21,7 @@ const Routing = () => {
         <Route path="/login" element={<LogIn />} />
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/testing" element={<Testing />} />
+        <Route path="/api" element={<Api />} />
       </Routes>
     </>
   );
