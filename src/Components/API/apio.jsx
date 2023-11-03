@@ -58,6 +58,7 @@ const Api = () => {
         const response = await axios.get(options01.url, {
           params: options01.params,
           headers: options01.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -71,6 +72,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options01_1.url, {
           headers: options01_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -113,6 +115,7 @@ const Api = () => {
         const response = await axios.get(options02.url, {
           params: options02.params,
           headers: options02.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -126,6 +129,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options02_1.url, {
           headers: options02_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -166,6 +170,7 @@ const Api = () => {
         const response = await axios.get(options03.url, {
           params: options03.params,
           headers: options03.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -180,6 +185,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options03_1.url, {
           headers: options03_1.headers,
+          withCredentials: false,
         });
         a[2][0] = companyResponse.data.body[0].name;
         a[2][4] = response.data.meta.processedTime;
@@ -220,6 +226,7 @@ const Api = () => {
         const response = await axios.get(options04.url, {
           params: options04.params,
           headers: options04.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -234,6 +241,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options04_1.url, {
           headers: options04_1.headers,
+          withCredentials: false,
         });
         a[3][0] = companyResponse.data.body[0].name;
         a[3][4] = response.data.meta.processedTime;
@@ -274,6 +282,7 @@ const Api = () => {
         const response = await axios.get(options05.url, {
           params: options05.params,
           headers: options05.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -286,6 +295,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options05_1.url, {
           headers: options05_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -329,6 +339,7 @@ const Api = () => {
         const response = await axios.get(options06.url, {
           params: options06.params,
           headers: options06.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -341,6 +352,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options06_1.url, {
           headers: options06_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -384,6 +396,7 @@ const Api = () => {
         const response = await axios.get(options07.url, {
           params: options07.params,
           headers: options07.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -396,6 +409,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options07_1.url, {
           headers: options07_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -439,6 +453,7 @@ const Api = () => {
         const response = await axios.get(options08.url, {
           params: options08.params,
           headers: options08.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -451,6 +466,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options08_1.url, {
           headers: options08_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -494,6 +510,7 @@ const Api = () => {
         const response = await axios.get(options09.url, {
           params: options09.params,
           headers: options09.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -506,6 +523,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options09_1.url, {
           headers: options09_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
@@ -549,6 +567,7 @@ const Api = () => {
         const response = await axios.get(options10.url, {
           params: options10.params,
           headers: options10.headers,
+          withCredentials: false,
         });
 
         const itemsArray = Object.values(response.data.body);
@@ -561,6 +580,7 @@ const Api = () => {
 
         const companyResponse = await axios.get(options10_1.url, {
           headers: options10_1.headers,
+          withCredentials: false,
         });
 
         console.log(companyResponse.data.body[0].name);
