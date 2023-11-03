@@ -1,7 +1,7 @@
 import React from 'react';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
-axios.defaults.withCredentials = false;
+axios.defaults.withCredentials = true;
 const LogIn = () => {
   const [formData, setFormData] = React.useState({
     username: '',
