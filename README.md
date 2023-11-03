@@ -20,3 +20,6 @@
 6. Push the changes to the main branch by the command `git push origin <the branch on which the changes are made>`
 7. Create  a PR by visiting the link shown up in the integrated terminal of the code editor, or just visit the repository of the project.
 8. Happy Contributing!
+
+##Deployed with Vercel
+https://wallet-x-virid.vercel.app/
