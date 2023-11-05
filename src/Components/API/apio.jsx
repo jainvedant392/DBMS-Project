@@ -1,15 +1,48 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { useNavigate } from 'react-router-dom';
 const Api = () => {
-  const handleClick = () => {
-    alert('Added to Watchlist');
-  };
+  const navigate = useNavigate();
   const handleMouseHover = (e) => {
     e.target.style.cursor = 'pointer';
   };
+  const tickerName = {
+    'Apple Inc.': 'AAPL',
+    'American Express Company': 'AXP',
+    'BlackRock, Inc.': 'BLK',
+    'Microsoft Corporation': 'MSFT',
+    'Tesla, Inc.': 'TSLA',
+    'Amazon.com, Inc.': 'AMZN',
+    'Alphabet Inc.': 'GOOG',
+    'NIKE, Inc.': 'NKE',
+    'Uber Technologies, Inc.': 'UBER',
+    'NVIDIA Corporation': 'NVDA',
+  };
+  const toAdd = async (x) => {
+    if (tickerName[x.trim()]) {
+      try {
+        await axios.post('https://walletx-backend.onrender.com/watchlist', {
+          asset_name: x,
+          asset_id: tickerName[x.trim()],
+        });
+        alert('Added to watchlist');
+      } catch (err) {
+        if (err.response && err.response.status === 401) {
+          console.error('Unauthorized: You are not logged in.');
+          navigate('/login');
+        } else if (err.response && err.response.status === 400) {
+          alert('Already added to watchlist');
+        }
+      }
+      console.log('Added to watchlist');
+      console.log(tickerName[x]);
+    } else {
+      console.error(`Company name not found in tickerName object: ${x}`);
+    }
+  };
 
-  const Key = '51f791c132msh21269cb69c6ce76p1e8498jsnbb6dde117c76';
+  //'c46fd9bc6fmshc85441129815171p1477a5jsn819d06260da1'
+  const Key = 'c46fd9bc6fmshc85441129815171p1477a5jsn819d06260da1';
   const Host = 'yahoo-finance15.p.rapidapi.com';
 
   let a = [[], [], [], [], [], [], [], [], [], []];
@@ -36,7 +69,7 @@ const Api = () => {
   useEffect(() => {
     const fetchData = async () => {
       const options01 = {
-        url: 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/hi/history/AAPL/15m', // Apple Inc.
+        url: 'https://yahoo-finance15.p.rapidapi.com/api/yahoo/hi/history/AAPL/1d', // Apple Inc.
         params: {
           diffandsplits: 'false',
         },
@@ -616,24 +649,20 @@ const Api = () => {
 
       <div className="row-1">
         <span className="col0">1</span>
-        {data.dataA0 && (
-          <span className=""> {JSON.stringify(data.dataA0)}</span>
-        )}
-        {`${data.dataA1}` && (
+        {data.dataA0 && <span className=""> {data.dataA0}</span>}
+        {data.dataA1 && (
           <span className="col2"> {JSON.stringify(data.dataA1)}</span>
         )}
-        {`${data.dataA2}` && (
+        {data.dataA2 && (
           <span className="col3"> {JSON.stringify(data.dataA2)}</span>
         )}
-        {`${data.dataA3}` && (
+        {data.dataA3 && (
           <span className="col4"> {JSON.stringify(data.dataA3)}</span>
         )}
-        {`${data.dataA4}` && (
-          <span className="col5"> {JSON.stringify(data.dataA4)}</span>
-        )}
+        {data.dataA4 && <span className="col5"> {data.dataA4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data.dataA0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -641,9 +670,7 @@ const Api = () => {
       </div>
       <div className="row-2">
         <span className="col0">2</span>
-        {data1.dataB0 && (
-          <span className=""> {JSON.stringify(data1.dataB0)}</span>
-        )}
+        {data1.dataB0 && <span className=""> {data1.dataB0}</span>}
         {data1.dataB1 && (
           <span className="col2"> {JSON.stringify(data1.dataB1)}</span>
         )}
@@ -653,12 +680,10 @@ const Api = () => {
         {data1.dataB3 && (
           <span className="col4"> {JSON.stringify(data1.dataB3)}</span>
         )}
-        {data1.dataB4 && (
-          <span className="col5"> {JSON.stringify(data1.dataB4)}</span>
-        )}
+        {data1.dataB4 && <span className="col5"> {data1.dataB4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data1.dataB0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -667,9 +692,7 @@ const Api = () => {
       <div className="row-3">
         <span className="col0">3</span>
 
-        {data2.dataC0 && (
-          <span className=""> {JSON.stringify(data2.dataC0)}</span>
-        )}
+        {data2.dataC0 && <span className=""> {data2.dataC0}</span>}
         {data2.dataC1 && (
           <span className="col2"> {JSON.stringify(data2.dataC1)}</span>
         )}
@@ -679,12 +702,10 @@ const Api = () => {
         {data2.dataC3 && (
           <span className="col4"> {JSON.stringify(data2.dataC3)}</span>
         )}
-        {data2.dataC4 && (
-          <span className="col5"> {JSON.stringify(data2.dataC4)}</span>
-        )}
+        {data2.dataC4 && <span className="col5"> {data2.dataC4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data2.dataC0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -693,24 +714,18 @@ const Api = () => {
       <div className="row-4">
         <span className="col0">4</span>
 
-        {data3.dataD0 && (
-          <span className=""> {JSON.stringify(data3.dataD0)}</span>
-        )}
+        {data3.dataD0 && <span className=""> {data3.dataD0}</span>}
         {data3.dataD1 && (
           <span className="col2"> {JSON.stringify(data3.dataD1)}</span>
         )}
         {data3.dataD2 && (
           <span className="col3"> {JSON.stringify(data3.dataD2)}</span>
         )}
-        {data3.dataD3 && (
-          <span className="col4"> {JSON.stringify(data3.dataD3)}</span>
-        )}
-        {data3.dataD4 && (
-          <span className="col5"> {JSON.stringify(data3.dataD4)}</span>
-        )}
+        {data3.dataD3 && <span className="col4"> {data3.dataD3}</span>}
+        {data3.dataD4 && <span className="col5"> {data3.dataD4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data3.dataD0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -719,9 +734,7 @@ const Api = () => {
       <div className="row-5">
         <span className="col0">5</span>
 
-        {data4.dataE0 && (
-          <span className=""> {JSON.stringify(data4.dataE0)}</span>
-        )}
+        {data4.dataE0 && <span className=""> {data4.dataE0}</span>}
         {data4.dataE1 && (
           <span className="col2"> {JSON.stringify(data4.dataE1)}</span>
         )}
@@ -731,12 +744,10 @@ const Api = () => {
         {data4.dataE3 && (
           <span className="col4"> {JSON.stringify(data4.dataE3)}</span>
         )}
-        {data4.dataE4 && (
-          <span className="col5"> {JSON.stringify(data4.dataE4)}</span>
-        )}
+        {data4.dataE4 && <span className="col5"> {data4.dataE4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data4.dataE0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -745,9 +756,7 @@ const Api = () => {
       <div className="row-6">
         <span className="col0">6</span>
 
-        {data5.dataF0 && (
-          <span className=""> {JSON.stringify(data5.dataF0)}</span>
-        )}
+        {data5.dataF0 && <span className=""> {data5.dataF0}</span>}
         {data5.dataF1 && (
           <span className="col2"> {JSON.stringify(data5.dataF1)}</span>
         )}
@@ -757,12 +766,10 @@ const Api = () => {
         {data5.dataF3 && (
           <span className="col4"> {JSON.stringify(data5.dataF3)}</span>
         )}
-        {data5.dataF4 && (
-          <span className="col5"> {JSON.stringify(data5.dataF4)}</span>
-        )}
+        {data5.dataF4 && <span className="col5"> {data5.dataF4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data5.dataF0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -771,9 +778,7 @@ const Api = () => {
       <div className="row-7">
         <span className="col0">7</span>
 
-        {data6.dataG0 && (
-          <span className=""> {JSON.stringify(data6.dataG0)}</span>
-        )}
+        {data6.dataG0 && <span className=""> {data6.dataG0}</span>}
         {data6.dataG1 && (
           <span className="col2"> {JSON.stringify(data6.dataG1)}</span>
         )}
@@ -783,12 +788,10 @@ const Api = () => {
         {data6.dataG3 && (
           <span className="col4"> {JSON.stringify(data6.dataG3)}</span>
         )}
-        {data6.dataG4 && (
-          <span className="col5"> {JSON.stringify(data6.dataG4)}</span>
-        )}
+        {data6.dataG4 && <span className="col5"> {data6.dataG4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data6.dataG0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -797,9 +800,7 @@ const Api = () => {
       <div className="row-8">
         <span className="col0">8</span>
 
-        {data7.dataH0 && (
-          <span className=""> {JSON.stringify(data7.dataH0)}</span>
-        )}
+        {data7.dataH0 && <span className=""> {data7.dataH0}</span>}
         {data7.dataH1 && (
           <span className="col2"> {JSON.stringify(data7.dataH1)}</span>
         )}
@@ -809,12 +810,10 @@ const Api = () => {
         {data7.dataH3 && (
           <span className="col4"> {JSON.stringify(data7.dataH3)}</span>
         )}
-        {data7.dataH4 && (
-          <span className="col5"> {JSON.stringify(data7.dataH4)}</span>
-        )}
+        {data7.dataH4 && <span className="col5"> {data7.dataH4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data7.dataH0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -823,9 +822,7 @@ const Api = () => {
       <div className="row-9">
         <span className="col0">9</span>
 
-        {data8.dataI0 && (
-          <span className=""> {JSON.stringify(data8.dataI0)}</span>
-        )}
+        {data8.dataI0 && <span className=""> {data8.dataI0}</span>}
         {data8.dataI1 && (
           <span className="col2"> {JSON.stringify(data8.dataI1)}</span>
         )}
@@ -835,12 +832,10 @@ const Api = () => {
         {data8.dataI3 && (
           <span className="col4"> {JSON.stringify(data8.dataI3)}</span>
         )}
-        {data8.dataE4 && (
-          <span className="col5"> {JSON.stringify(data4.dataI4)}</span>
-        )}
+        {data8.dataE4 && <span className="col5"> {data8.dataI4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data8.dataI0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -849,9 +844,7 @@ const Api = () => {
       <div className="row-10">
         <span className="col0">10</span>
 
-        {data9.dataJ0 && (
-          <span className=""> {JSON.stringify(data9.dataJ0)}</span>
-        )}
+        {data9.dataJ0 && <span className=""> {data9.dataJ0}</span>}
         {data9.dataJ1 && (
           <span className="col2"> {JSON.stringify(data9.dataJ1)}</span>
         )}
@@ -861,12 +854,10 @@ const Api = () => {
         {data9.dataJ3 && (
           <span className="col4"> {JSON.stringify(data9.dataJ3)}</span>
         )}
-        {data9.dataJ4 && (
-          <span className="col5"> {JSON.stringify(data9.dataJ4)}</span>
-        )}
+        {data9.dataJ4 && <span className="col5"> {data9.dataJ4}</span>}
         <span
           className="col6"
-          onClick={handleClick}
+          onClick={() => toAdd(data9.dataJ0)}
           onMouseOver={handleMouseHover}
         >
           +
@@ -875,5 +866,4 @@ const Api = () => {
     </div>
   );
 };
-
 export default Api;
