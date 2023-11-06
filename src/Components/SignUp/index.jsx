@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 const SignUp = () => {
+  const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
     username: '',
     password: '',
@@ -55,52 +57,68 @@ const SignUp = () => {
   return (
     <>
       <div className="container">
-        <div className="signup-form">
-          <h1>Sign Up</h1>
-          <form onSubmit={handleSubmit}>
-            <div className="form-group">
-              <label htmlFor="username">Username</label>
-              <input
-                type="text"
-                id="username"
-                name="username"
-                value={formData.username}
-                onChange={handleChange}
-                required
-              />
-              {usernameError && (
-                <div className="error-text">{usernameError}</div>
-              )}
+        <div className="formContainer">
+          <div className="form-header">Sign Up</div>
+          <div className="signup-form">
+            <form onSubmit={handleSubmit}>
+              <div className="form-group">
+                <label htmlFor="username">Username</label>
+                <input
+                  type="text"
+                  id="username"
+                  name="username"
+                  value={formData.username}
+                  onChange={handleChange}
+                  required
+                />
+                {usernameError && (
+                  <div className="error-text">{usernameError}</div>
+                )}
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                />
+                {emailError && <div className="error-text">{emailError}</div>}
+              </div>
+              <div className="form-group">
+                <label htmlFor="password">Password</label>
+                <input
+                  type="password"
+                  id="password"
+                  name="password"
+                  value={formData.password}
+                  onChange={handleChange}
+                  required
+                />
+                {passwordError && (
+                  <div className="error-text">{passwordError}</div>
+                )}
+              </div>
+              <div className="buttonContainer">
+                <button type="submit">Sign Up</button>
+              </div>
+            </form>
+          </div>
+          <div className="form-footer">
+            <div style={{ paddingRight: '2vw' }}>Already have an account?</div>
+            <div>
+              <button
+                onClick={() => {
+                  navigate('/login');
+                }}
+                className="navigator-button"
+              >
+                Log In
+              </button>
             </div>
-            <div className="form-group">
-              <label htmlFor="password">Email</label>
-              <input
-                type="email"
-                id="email"
-                name="email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-              {emailError && <div className="error-text">{emailError}</div>}
-            </div>
-            <div className="form-group">
-              <label htmlFor="password">Password</label>
-              <input
-                type="password"
-                id="password"
-                name="password"
-                value={formData.password}
-                onChange={handleChange}
-                required
-              />
-              {passwordError && (
-                <div className="error-text">{passwordError}</div>
-              )}
-            </div>
-
-            <button type="submit">Sign Up</button>
-          </form>
+          </div>
         </div>
       </div>
     </>

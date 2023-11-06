@@ -46,35 +46,59 @@ const LogIn = () => {
 
   return (
     <div className="container">
-      <div className="signup-form">
-        <h1>Log In</h1>
-        <form onSubmit={handleSubmit}>
-          <div className="form-group">
-            <label htmlFor="username">Username</label>
-            <input
-              type="text"
-              id="username"
-              name="username"
-              value={formData.username}
-              onChange={handleChange}
-              required
-            />
-            {usernameError && <div className="error-text">{usernameError}</div>}
+      <div className="formContainer" style={{ marginTop: '12vh' }}>
+        <div className="form-header">Log In</div>
+        <div
+          className="login-form"
+          style={{ paddingTop: '6vh', paddingBottom: '6vh' }}
+        >
+          <form onSubmit={handleSubmit}>
+            <div className="form-group">
+              <label htmlFor="username">Username</label>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
+              {usernameError && (
+                <div className="error-text">{usernameError}</div>
+              )}
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+              />
+              {passwordError && (
+                <div className="error-text">{passwordError}</div>
+              )}
+            </div>
+            <div className="buttonContainer">
+              <button type="submit">Log In</button>
+            </div>
+          </form>
+        </div>
+        <div className="form-footer">
+          <div style={{ paddingRight: '2vw' }}>Dont have an account?</div>
+          <div>
+            <button
+              onClick={() => {
+                navigate('/signup');
+              }}
+              className="navigator-button"
+            >
+              Sign Up
+            </button>
           </div>
-          <div className="form-group">
-            <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={formData.password}
-              onChange={handleChange}
-              required
-            />
-            {passwordError && <div className="error-text">{passwordError}</div>}
-          </div>
-          <button type="submit">Log In</button>
-        </form>
+        </div>
       </div>
     </div>
   );
