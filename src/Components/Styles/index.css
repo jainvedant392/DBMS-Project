@@ -47,7 +47,14 @@ a {
   color: #87ceeb;
   text-decoration: underline;
 }
-
+.custom-a {
+  color: #000000;
+  text-decoration: none;
+}
+.custom-a:hover {
+  color: #f7a600;
+  text-decoration: none;
+}
 a:hover {
   color: #2f3034;
 }
@@ -446,7 +453,8 @@ nav {
 }
 
 .signup-form button,
-.login-form button {
+.login-form button,
+.btn {
   padding: 1vh 4vw;
   border: none;
   border-radius: 0.6vw;
@@ -470,10 +478,10 @@ nav {
 .login-form input:hover {
   transform: scale(1.05);
   transition: transform 0.2s;
-  color: white;
 }
 .signup-form button:hover,
-.login-form button:hover {
+.login-form button:hover,
+.btn:hover {
   transform: scale(1.05);
   transition: transform 0.2s;
   color: white;
@@ -536,4 +544,10 @@ nav {
 .error-text {
   font-size: 16px;
   color: red;
+}
+.watchlist {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  padding: 2vh 2vw;
 }

@@ -63,6 +63,9 @@ export default function NavBar() {
               <Link to="/api" className="nav-link nav-testing">
                 API
               </Link>
+              <Link to="/watchlist" className="nav-link nav-watchlist">
+                WatchList
+              </Link>
               <Link to="/login" className="nav-link nav-login">
                 {navOpen ? (
                   'Log In'

@@ -9,6 +9,7 @@ import Wallet from '../Wallet';
 import Market from '../Market';
 import Testing from '../Testing';
 import Api from '../API/apio';
+import WatchList from '../WatchList';
 const Routing = () => {
   return (
     <>
@@ -22,6 +23,7 @@ const Routing = () => {
         <Route path="/wallet" element={<Wallet />} />
         <Route path="/testing" element={<Testing />} />
         <Route path="/api" element={<Api />} />
+        <Route path="/watchlist" element={<WatchList />} />
       </Routes>
     </>
   );
