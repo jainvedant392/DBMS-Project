@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Chart from 'chart.js/auto';
 import { CategoryScale } from 'chart.js';
 import { Line } from 'react-chartjs-2';
-
+import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 const assetList = [
   {
     name: 'Apple Inc',
@@ -79,6 +80,25 @@ const assetList = [
 ];
 
 const Account = () => {
+  const navigate = useNavigate();
+  const fetchData = async () => {
+    try {
+      let response = await axios.get(
+        'https://walletx-backend.onrender.com/info'
+      );
+      console.log(response.data);
+    } catch (err) {
+      if (err.response && err.response.status === 401) {
+        console.error('Unauthorized: You are not logged in.');
+        navigate('/login');
+      } else {
+        console.error(err);
+      }
+    }
+  };
+  useEffect(() => {
+    fetchData();
+  }, []);
   Chart.register(CategoryScale);
   const [range, setRange] = useState('1D');
 
