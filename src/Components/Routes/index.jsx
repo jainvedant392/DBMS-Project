@@ -10,20 +10,45 @@ import Market from '../Market';
 import Testing from '../Testing';
 import Api from '../API/apio';
 import WatchList from '../WatchList';
+import Preloader from '../Preloader';
 const Routing = () => {
+  const [isLoading, setIsLoading] = React.useState(true);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 4000);
+  }, []);
   return (
     <>
       <NavBar />
       <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/account" element={<Account />} />
-        <Route path="/market" element={<Market />} />
-        <Route path="/signup" element={<SignUp />} />
-        <Route path="/login" element={<LogIn />} />
-        <Route path="/wallet" element={<Wallet />} />
-        <Route path="/testing" element={<Testing />} />
-        <Route path="/api" element={<Api />} />
-        <Route path="/watchlist" element={<WatchList />} />
+        <Route path="/" element={isLoading ? <Preloader /> : <Home />} />
+        <Route
+          path="/account"
+          element={isLoading ? <Preloader /> : <Account />}
+        />
+        <Route
+          path="/market"
+          element={isLoading ? <Preloader /> : <Market />}
+        />
+        <Route
+          path="/signup"
+          element={isLoading ? <Preloader /> : <SignUp />}
+        />
+        <Route path="/login" element={isLoading ? <Preloader /> : <LogIn />} />
+        <Route
+          path="/wallet"
+          element={isLoading ? <Preloader /> : <Wallet />}
+        />
+        <Route
+          path="/testing"
+          element={isLoading ? <Preloader /> : <Testing />}
+        />
+        <Route path="/api" element={isLoading ? <Preloader /> : <Api />} />
+        <Route
+          path="/watchlist"
+          element={isLoading ? <Preloader /> : <WatchList />}
+        />
       </Routes>
     </>
   );
