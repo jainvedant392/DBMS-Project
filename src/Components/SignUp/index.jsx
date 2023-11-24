@@ -1,8 +1,7 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 const SignUp = () => {
-  const navigate = useNavigate();
   const [formData, setFormData] = React.useState({
     username: '',
     password: '',
@@ -56,7 +55,7 @@ const SignUp = () => {
 
   return (
     <>
-      <div className="container">
+      <div className="formpage">
         <div className="formContainer">
           <div className="form-header">Sign Up</div>
           <div className="signup-form">
@@ -107,16 +106,11 @@ const SignUp = () => {
             </form>
           </div>
           <div className="form-footer">
-            <div style={{ paddingRight: '2vw' }}>Already have an account?</div>
+            <div>Already have an account? &nbsp;</div>
             <div>
-              <button
-                onClick={() => {
-                  navigate('/login');
-                }}
-                className="navigator-button"
-              >
+              <Link to="/login" className="navigator_link">
                 Log In
-              </button>
+              </Link>
             </div>
           </div>
         </div>
