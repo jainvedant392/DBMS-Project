@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 axios.defaults.withCredentials = true;
 const LogIn = () => {
   const [formData, setFormData] = React.useState({
@@ -45,7 +45,7 @@ const LogIn = () => {
   };
 
   return (
-    <div className="container">
+    <div className="formpage">
       <div className="formContainer" style={{ marginTop: '12vh' }}>
         <div className="form-header">Log In</div>
         <div
@@ -87,16 +87,11 @@ const LogIn = () => {
           </form>
         </div>
         <div className="form-footer">
-          <div style={{ paddingRight: '2vw' }}>Dont have an account?</div>
+          <div>Dont have an account? &nbsp;</div>
           <div>
-            <button
-              onClick={() => {
-                navigate('/signup');
-              }}
-              className="navigator-button"
-            >
+            <Link to="/signup" className="navigator_link">
               Sign Up
-            </button>
+            </Link>
           </div>
         </div>
       </div>
