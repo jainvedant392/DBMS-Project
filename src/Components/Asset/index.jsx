@@ -127,8 +127,14 @@ export const Asset = ({ asset }) => {
                 {
                   id: 1,
                   label: 'Current Price',
-                  data: Array.from({ length: labels[range].length }, () =>
-                    Math.floor(Math.random() * 1000)
+                  data: Array.from(
+                    { length: labels[range].length },
+                    (index) => {
+                      if (index === 0) {
+                        return asset.price;
+                      }
+                      return Math.floor(Math.random() * 50000);
+                    }
                   ),
                   radius: 2,
                   backgroundColor: '#16C784',

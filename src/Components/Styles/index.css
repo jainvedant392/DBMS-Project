@@ -68,10 +68,6 @@ a {
   color: #000000;
   text-decoration: none;
 }
-.custom-a:hover {
-  color: #f7a600;
-  text-decoration: none;
-}
 a:hover {
   color: #2f3034;
 }
@@ -90,7 +86,6 @@ a:hover {
   text-transform: uppercase;
 }
 .container {
-  /* background-color: #202020; */
   background-color: #ffffff;
   color: #000000;
   font-family: 'Lato', sans-serif;
@@ -262,7 +257,6 @@ nav {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  /* background-color: #87ceeb; */
   max-width: 50rem;
 }
 
@@ -313,12 +307,57 @@ nav {
 }
 
 .header_right {
-  width: 43rem;
+  width: 45rem;
   height: 33rem;
   background-image: url('src/assets/Landing_header.jpeg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  box-shadow: 1px 2px 2rem rgba(255, 255, 255, 0.8);
+}
+
+.landing_body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding-top: 6rem;
+}
+
+.body_component {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  background-color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
+  width: 75%;
+  margin-bottom: 5rem;
+  padding: 2rem 0rem;
+}
+
+.body_component > .text {
+  max-width: 30rem;
+}
+
+.body_component > .text > p {
+  text-indent: 0;
+}
+
+.body_component > .text > .heading {
+  font-size: 2rem;
+  color: #f7a600;
+  margin-bottom: 1rem;
+}
+
+.body_component > .text > .description {
+  font-size: 1.1rem;
+  color: #000000;
+}
+
+.body_component > .image > img {
+  width: 32rem;
+  height: 27rem;
 }
 
 .footer_container {
@@ -332,6 +371,7 @@ nav {
   width: 100vw;
   padding: 1.5rem 0rem;
   background-color: #f5f7fa;
+  border-top: 3px solid #d3d3d3;
 }
 
 .landing_footer {
@@ -463,6 +503,43 @@ nav {
   padding-inline: 20px;
 }
 
+.watchlist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.watchlist-table th,
+.watchlist-table td {
+  border: 1px solid #616e85;
+  padding: 8px;
+  text-align: left;
+}
+
+.watchlist-table th {
+  background-color: #1a1c20;
+  color: white;
+}
+
+.watchlist-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.watchlist-table tr:hover {
+  background-color: #ddd;
+}
+
+.watchlist-table .btn {
+  background-color: #f7a600;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 @media screen and (1024px>=width>797px) {
   .asset_name,
   .asset_price {
@@ -472,9 +549,16 @@ nav {
   .navMenu_open {
     gap: 16px;
   }
+  .watchlist-table td {
+    font-size: 16px;
+  }
+  .watchlist-table .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 
-@media screen and (max-width: 796px) {
+@media screen and (480px<=width<= 796px) {
   .nav_hamburger {
     display: flex;
   }
@@ -536,7 +620,92 @@ nav {
     padding-inline: 0;
     margin-inline: auto;
   }
+  .watchlist-table th {
+    font-size: 2vw;
+  }
+  .watchlist-table td {
+    font-size: 14px;
+  }
+  .watchlist-table .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
+
+@media screen and (max-width: 480px) {
+  .nav_hamburger {
+    display: flex;
+  }
+  .AiOutlineClose {
+    position: relative;
+    top: 35px;
+    z-index: 2;
+  }
+  .navMenu_open {
+    background-color: #17181e;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    width: 270%;
+    position: relative;
+    left: 100%;
+    top: 45px;
+    animation: slidein 0.33s ease-in-out 1;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .navbar_open {
+    padding-top: 175px;
+    top: 100px;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  .navMenu_closed {
+    display: none;
+  }
+  .nav-link {
+    margin: 2vh 0;
+    text-align: center;
+  }
+  .nav_hamburger {
+    display: flex;
+  }
+  .asset {
+    flex-direction: column;
+  }
+  .asset_data {
+    width: 95%;
+  }
+  .asset_chart {
+    width: 95%;
+    margin-right: 0;
+    padding-inline: 10px;
+  }
+  .chart_select {
+    padding-inline: 0;
+    margin-inline: auto;
+  }
+  .watchlist-table th {
+    font-size: 10px;
+  }
+  .watchlist-table td {
+    font-size: 12px;
+  }
+  .watchlist-table .btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
 /* assets page start*/
 .assets_container {
   display: grid;
@@ -601,6 +770,15 @@ nav {
 }
 
 /* assets page end */
+
+.formpage {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .signup-form,
 .login-form {
   background-color: #ffffff;
@@ -619,7 +797,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
   -webkit-border-radius: 0 0 1vw 1vw;
   -moz-border-radius: 0 0 1vw 1vw;
   -ms-border-radius: 0 0 1vw 1vw;
@@ -660,13 +837,8 @@ nav {
 .login-form input {
   width: 70%;
   padding: 1.5vh 2vw;
-  border: 1px solid #ccc;
   border-radius: 5px;
   margin: 1vh 0;
-  font-size: 2vw;
-  transition:
-    border-color 0.3s,
-    box-shadow 0.3s;
 }
 
 .signup-form button,
@@ -691,14 +863,8 @@ nav {
   align-items: center;
   margin-top: 6vh;
 }
-.signup-form input:hover,
-.login-form input:hover {
-  transform: scale(1.05);
-  transition: transform 0.2s;
-}
 .signup-form button:hover,
-.login-form button:hover,
-.btn:hover {
+.login-form button:hover {
   transform: scale(1.05);
   transition: transform 0.2s;
   color: white;
@@ -706,21 +872,14 @@ nav {
   color: #f7a600;
   font-weight: 700;
 }
-.navigator-button {
-  color: #1a1c20;
-  background-color: #f7a600;
-  padding: 0.6vh 1.2vw;
-  border: none;
-  border-radius: 0.6vw;
-  cursor: pointer;
-}
-.navigator-button:hover {
-  background-color: #1a1c20;
+.navigator_link {
   color: #f7a600;
-  transform: scale(1.05);
-  transition: transform 0.2s;
-  font-weight: 700;
+  text-decoration: none;
 }
+.navigator_link:hover {
+  color: #f7a600;
+}
+
 .signup-form label,
 .login-form label {
   margin-bottom: 0.5vh;
@@ -761,10 +920,4 @@ nav {
 .error-text {
   font-size: 16px;
   color: red;
-}
-.watchlist {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2vh 2vw;
 }
