@@ -41,27 +41,44 @@ const WatchList = () => {
     <>
       <div className="container">
         <h1>WatchList</h1>
-        <ul>
-          {data.map((item) => (
-            <React.Fragment key={item.asset_id}>
-              <div className="watchlist">
-                <h3>Asset ID: {item.asset_id}</h3>
-                <h3>Asset Name: {item.asset_name}</h3>
-                <button className="btn">
-                  <a href={item.asset_info} target="blank" className="custom-a">
-                    Details
-                  </a>
-                </button>
-                <button
-                  onClick={() => removeItem(item.asset_id)}
-                  className="btn"
-                >
-                  Remove
-                </button>
-              </div>
-            </React.Fragment>
-          ))}
-        </ul>
+        <table className="watchlist-table">
+          <thead>
+            <tr>
+              <th>Asset ID</th>
+              <th>Asset Name</th>
+              <th>Details</th>
+              <th>Remove</th>
+            </tr>
+          </thead>
+          <tbody>
+            {data.map((item) => (
+              <tr key={item.asset_id}>
+                <td>{item.asset_id}</td>
+                <td>{item.asset_name}</td>
+                <td>
+                  <button className="btn">
+                    <a
+                      href={item.asset_info}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="custom-a"
+                    >
+                      Details
+                    </a>
+                  </button>
+                </td>
+                <td>
+                  <button
+                    onClick={() => removeItem(item.asset_id)}
+                    className="btn"
+                  >
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
       </div>
     </>
   );
