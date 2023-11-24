@@ -24,7 +24,7 @@ const Preloader = () => {
       >
         <Lottie
           animationData={animationData}
-          style={{ height: '30rem', marginTop: '-10rem' }}
+          style={{ height: '25rem', marginTop: '-10rem' }}
           lottieRef={lottieRef}
         ></Lottie>
       </div>
