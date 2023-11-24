@@ -42,7 +42,7 @@ const Api = () => {
   };
 
   //'c46fd9bc6fmshc85441129815171p1477a5jsn819d06260da1'
-  const Key = 'c46fd9bc6fmshc85441129815171p1477a5jsn819d06260da1';
+  const Key = 'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830';
   const Host = 'yahoo-finance15.p.rapidapi.com';
 
   let a = [
@@ -689,7 +689,7 @@ const Api = () => {
         params: { symbol: 'BTCUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -733,7 +733,7 @@ const Api = () => {
         params: { symbol: 'ETHUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -777,7 +777,7 @@ const Api = () => {
         params: { symbol: 'DOGEUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -821,7 +821,7 @@ const Api = () => {
         params: { symbol: 'MATICUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -865,7 +865,7 @@ const Api = () => {
         params: { symbol: 'XRPUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -909,7 +909,7 @@ const Api = () => {
         params: { symbol: 'BNBUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -953,7 +953,7 @@ const Api = () => {
         params: { symbol: 'LINAUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -997,7 +997,7 @@ const Api = () => {
         params: { symbol: 'LUNAUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -1041,7 +1041,7 @@ const Api = () => {
         params: { symbol: 'LINKUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -1085,7 +1085,7 @@ const Api = () => {
         params: { symbol: 'ROSEUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            '6625155441mshc585a73b67b2623p17a165jsn3970852cf54b',
+            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -1136,7 +1136,7 @@ const Api = () => {
       </div>
 
       <div className="row-1">
-        <span className="col0">1</span>
+        <span className="col0">1.</span>
         {data0.dataA0 && <span className=""> {data0.dataA0}</span>}
         {data0.dataA1 && (
           <span className="col2"> {JSON.stringify(data0.dataA1)}</span>
@@ -1153,11 +1153,11 @@ const Api = () => {
           onClick={() => toAdd(data0.dataA0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-2">
-        <span className="col0">2</span>
+        <span className="col0">2.</span>
         {data1.dataB0 && <span className=""> {data1.dataB0}</span>}
         {data1.dataB1 && (
           <span className="col2"> {JSON.stringify(data1.dataB1)}</span>
@@ -1174,11 +1174,11 @@ const Api = () => {
           onClick={() => toAdd(data1.dataB0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-3">
-        <span className="col0">3</span>
+        <span className="col0">3.</span>
 
         {data2.dataC0 && <span className=""> {data2.dataC0}</span>}
         {data2.dataC1 && (
@@ -1196,11 +1196,11 @@ const Api = () => {
           onClick={() => toAdd(data2.dataC0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-4">
-        <span className="col0">4</span>
+        <span className="col0">4.</span>
 
         {data3.dataD0 && <span className=""> {data3.dataD0}</span>}
         {data3.dataD1 && (
@@ -1216,11 +1216,11 @@ const Api = () => {
           onClick={() => toAdd(data3.dataD0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-5">
-        <span className="col0">5</span>
+        <span className="col0">5.</span>
 
         {data4.dataE0 && <span className=""> {data4.dataE0}</span>}
         {data4.dataE1 && (
@@ -1238,11 +1238,11 @@ const Api = () => {
           onClick={() => toAdd(data4.dataE0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-6">
-        <span className="col0">6</span>
+        <span className="col0">6.</span>
 
         {data5.dataF0 && <span className=""> {data5.dataF0}</span>}
         {data5.dataF1 && (
@@ -1260,11 +1260,11 @@ const Api = () => {
           onClick={() => toAdd(data5.dataF0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-7">
-        <span className="col0">7</span>
+        <span className="col0">7.</span>
 
         {data6.dataG0 && <span className=""> {data6.dataG0}</span>}
         {data6.dataG1 && (
@@ -1282,11 +1282,11 @@ const Api = () => {
           onClick={() => toAdd(data6.dataG0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-8">
-        <span className="col0">8</span>
+        <span className="col0">8.</span>
 
         {data7.dataH0 && <span className=""> {data7.dataH0}</span>}
         {data7.dataH1 && (
@@ -1304,11 +1304,11 @@ const Api = () => {
           onClick={() => toAdd(data7.dataH0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-9">
-        <span className="col0">9</span>
+        <span className="col0">9.</span>
 
         {data8.dataI0 && <span className=""> {data8.dataI0}</span>}
         {data8.dataI1 && (
@@ -1326,11 +1326,11 @@ const Api = () => {
           onClick={() => toAdd(data8.dataI0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-10">
-        <span className="col0">10</span>
+        <span className="col0">10.</span>
 
         {data9.dataJ0 && <span className=""> {data9.dataJ0}</span>}
         {data9.dataJ1 && (
@@ -1348,14 +1348,14 @@ const Api = () => {
           onClick={() => toAdd(data9.dataJ0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       {/* crypto */}
 
       <div className="row-11">
-        <span className="col0">11</span>
+        <span className="col0">11.</span>
 
         {data10.dataK0 && <span className="col1"> {data10.dataK0}</span>}
         {data10.dataK1 && (
@@ -1373,12 +1373,12 @@ const Api = () => {
           onClick={() => toAdd(data10.dataK0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-12">
-        <span className="col0">12</span>
+        <span className="col0">12.</span>
 
         {data11.dataL0 && <span className="col1"> {data11.dataL0}</span>}
         {data11.dataL1 && (
@@ -1396,12 +1396,12 @@ const Api = () => {
           onClick={() => toAdd(data11.dataL0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-13">
-        <span className="col0">13</span>
+        <span className="col0">13.</span>
 
         {data12.dataM0 && <span className="col1"> {data12.dataM0}</span>}
         {data12.dataM1 && (
@@ -1419,11 +1419,11 @@ const Api = () => {
           onClick={() => toAdd(data12.dataM0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
       <div className="row-14">
-        <span className="col0">14</span>
+        <span className="col0">14.</span>
 
         {data13.dataN0 && <span className="col1"> {data13.dataN0}</span>}
         {data13.dataN1 && (
@@ -1441,12 +1441,12 @@ const Api = () => {
           onClick={() => toAdd(data13.dataN0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-15">
-        <span className="col0">15</span>
+        <span className="col0">15.</span>
 
         {data14.dataO0 && <span className="col1"> {data14.dataO0}</span>}
         {data14.dataO1 && (
@@ -1464,12 +1464,12 @@ const Api = () => {
           onClick={() => toAdd(data14.dataO0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-16">
-        <span className="col0">16</span>
+        <span className="col0">16.</span>
 
         {data15.dataP0 && <span className="col1"> {data15.dataP0}</span>}
         {data15.dataP1 && (
@@ -1487,12 +1487,12 @@ const Api = () => {
           onClick={() => toAdd(data15.dataP0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-17">
-        <span className="col0">17</span>
+        <span className="col0">17.</span>
 
         {data16.dataQ0 && <span className="col1"> {data16.dataQ0}</span>}
         {data16.dataQ1 && (
@@ -1510,12 +1510,12 @@ const Api = () => {
           onClick={() => toAdd(data16.dataQ0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-18">
-        <span className="col0">18</span>
+        <span className="col0">18.</span>
 
         {data17.dataR0 && <span className="col1"> {data17.dataR0}</span>}
         {data17.dataR1 && (
@@ -1533,12 +1533,12 @@ const Api = () => {
           onClick={() => toAdd(data17.dataR0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-19">
-        <span className="col0">19</span>
+        <span className="col0">19.</span>
 
         {data18.dataS0 && <span className="col1"> {data18.dataS0}</span>}
         {data18.dataS1 && (
@@ -1556,12 +1556,12 @@ const Api = () => {
           onClick={() => toAdd(data18.dataS0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
 
       <div className="row-20">
-        <span className="col0">20</span>
+        <span className="col0">20.</span>
 
         {data19.dataT0 && <span className="col1"> {data19.dataT0}</span>}
         {data19.dataT1 && (
@@ -1579,7 +1579,7 @@ const Api = () => {
           onClick={() => toAdd(data19.dataT0)}
           onMouseOver={handleMouseHover}
         >
-          +
+          Add
         </span>
       </div>
     </div>

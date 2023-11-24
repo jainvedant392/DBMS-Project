@@ -61,7 +61,7 @@ export default function NavBar() {
               </Link>
               {/* For Testing of Protection Of Routes */}
               <Link to="/api" className="nav-link nav-testing">
-                API
+                Assets
               </Link>
               <Link to="/watchlist" className="nav-link nav-watchlist">
                 WatchList
