@@ -470,7 +470,7 @@ nav {
   }
   .navMenu_closed,
   .navMenu_open {
-    gap: 20px;
+    gap: 16px;
   }
 }
 
