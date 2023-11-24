@@ -2,10 +2,17 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const LandingFooter = () => {
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth',
+    });
+  }
+
   return (
     <div className="footer_container">
       <div className="landing_footer">
-        <Link to="/" className="heading">
+        <Link to="/" className="heading" onClick={scrollToTop}>
           Wa<span className="ll">ll</span>et<span className="X">X</span>
         </Link>
         <hr />
