@@ -68,10 +68,6 @@ a {
   color: #000000;
   text-decoration: none;
 }
-.custom-a:hover {
-  color: #f7a600;
-  text-decoration: none;
-}
 a:hover {
   color: #2f3034;
 }
@@ -463,6 +459,43 @@ nav {
   padding-inline: 20px;
 }
 
+.watchlist-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.watchlist-table th,
+.watchlist-table td {
+  border: 1px solid #616e85;
+  padding: 8px;
+  text-align: left;
+}
+
+.watchlist-table th {
+  background-color: #1a1c20;
+  color: white;
+}
+
+.watchlist-table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+.watchlist-table tr:hover {
+  background-color: #ddd;
+}
+
+.watchlist-table .btn {
+  background-color: #f7a600;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
 @media screen and (1024px>=width>797px) {
   .asset_name,
   .asset_price {
@@ -472,9 +505,16 @@ nav {
   .navMenu_open {
     gap: 16px;
   }
+  .watchlist-table td {
+    font-size: 16px;
+  }
+  .watchlist-table .btn {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
 }
 
-@media screen and (max-width: 796px) {
+@media screen and (480px<=width<= 796px) {
   .nav_hamburger {
     display: flex;
   }
@@ -536,7 +576,92 @@ nav {
     padding-inline: 0;
     margin-inline: auto;
   }
+  .watchlist-table th {
+    font-size: 2vw;
+  }
+  .watchlist-table td {
+    font-size: 14px;
+  }
+  .watchlist-table .btn {
+    padding: 6px 12px;
+    font-size: 12px;
+  }
 }
+
+@media screen and (max-width: 480px) {
+  .nav_hamburger {
+    display: flex;
+  }
+  .AiOutlineClose {
+    position: relative;
+    top: 35px;
+    z-index: 2;
+  }
+  .navMenu_open {
+    background-color: #17181e;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+    width: 270%;
+    position: relative;
+    left: 100%;
+    top: 45px;
+    animation: slidein 0.33s ease-in-out 1;
+  }
+  .navbar {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    gap: 5px;
+  }
+  .navbar_open {
+    padding-top: 175px;
+    top: 100px;
+  }
+  .nav-container {
+    align-items: center;
+  }
+  .navMenu_closed {
+    display: none;
+  }
+  .nav-link {
+    margin: 2vh 0;
+    text-align: center;
+  }
+  .nav_hamburger {
+    display: flex;
+  }
+  .asset {
+    flex-direction: column;
+  }
+  .asset_data {
+    width: 95%;
+  }
+  .asset_chart {
+    width: 95%;
+    margin-right: 0;
+    padding-inline: 10px;
+  }
+  .chart_select {
+    padding-inline: 0;
+    margin-inline: auto;
+  }
+  .watchlist-table th {
+    font-size: 10px;
+  }
+  .watchlist-table td {
+    font-size: 12px;
+  }
+  .watchlist-table .btn {
+    padding: 4px 8px;
+    font-size: 10px;
+  }
+}
+
 /* assets page start*/
 .assets_container {
   display: grid;
@@ -689,8 +814,7 @@ nav {
   transition: transform 0.2s;
 }
 .signup-form button:hover,
-.login-form button:hover,
-.btn:hover {
+.login-form {
   transform: scale(1.05);
   transition: transform 0.2s;
   color: white;
@@ -753,10 +877,4 @@ nav {
 .error-text {
   font-size: 16px;
   color: red;
-}
-.watchlist {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
-  padding: 2vh 2vw;
 }
