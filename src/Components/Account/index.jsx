@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Asset } from '../Asset';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import Preloader from '../Preloader';
+
 const assetList = [
   {
     name: 'Apple Inc',
@@ -98,14 +100,24 @@ const Account = () => {
     fetchData();
   }, []);
 
+  const [isLoading, setIsLoading] = React.useState(true);
+  React.useEffect(() => {
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
   return (
     <>
-      <div className="container">
-        <h1>Dashboard</h1>
-        {assetList.map((asset, index) => {
-          return <Asset asset={asset} key={index} />;
-        })}
-      </div>
+      {isLoading ? (
+        <Preloader />
+      ) : (
+        <div className="container">
+          <h1>Dashboard</h1>
+          {assetList.map((asset, index) => {
+            return <Asset asset={asset} key={index} />;
+          })}
+        </div>
+      )}
     </>
   );
 };
