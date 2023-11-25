@@ -50,18 +50,11 @@ export default function NavBar() {
               <Link to="/account" className="nav-link nav-account">
                 Account
               </Link>
-              <Link to="/market" className="nav-link nav-market">
-                Market
-              </Link>
               <Link to="/wallet" className="nav-link nav-wallet">
                 Wallet
               </Link>
-              <Link to="/testing" className="nav-link nav-testing">
-                Testing
-              </Link>
-              {/* For Testing of Protection Of Routes */}
               <Link to="/api" className="nav-link nav-testing">
-                API
+                Assets
               </Link>
               <Link to="/watchlist" className="nav-link nav-watchlist">
                 WatchList
