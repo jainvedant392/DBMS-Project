@@ -17,6 +17,16 @@ const Api = () => {
     'NIKE, Inc.': 'NKE',
     'Uber Technologies, Inc.': 'UBER',
     'NVIDIA Corporation': 'NVDA',
+    ETHUSDT: 'ETHUSDT',
+    BTCUSDT: 'BTCUSDT',
+    DOGEUSDT: 'DOGEUSDT',
+    MATICUSDT: 'MATICUSDT',
+    XRPUSDT: 'XRPUSDT',
+    BNBUSDT: 'BNBUSDT',
+    LINAUSDT: 'LINAUSDT',
+    LUNAUSDT: 'LUNAUSDT',
+    LINKUSDT: 'LINKUSDT',
+    ROSEUSDT: 'ROSEUSDT',
   };
   const toAdd = async (x) => {
     if (tickerName[x.trim()]) {
