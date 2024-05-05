@@ -14,9 +14,7 @@ export default function NavBar() {
   };
   const LogOut = async () => {
     try {
-      let response = await axios.get(
-        'https://walletx-backend.onrender.com/logOut'
-      );
+      let response = await axios.get('http://localhost:3000/logout');
       alert(response.data);
       navigate('/login');
     } catch (err) {

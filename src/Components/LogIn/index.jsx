@@ -25,7 +25,7 @@ const LogIn = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://walletx-backend.onrender.com/login',
+        'http://localhost:3000/login',
         formData
       );
       console.log(response.data);

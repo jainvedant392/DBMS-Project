@@ -7,9 +7,7 @@ const WatchList = () => {
   const [data, setData] = React.useState([]);
   const fetchData = async () => {
     try {
-      let response = await axios.get(
-        'https://walletx-backend.onrender.com/watchlist'
-      );
+      let response = await axios.get('http://localhost:3000/watchlist');
       console.log(response.data.watchlist);
       setData(response.data.watchlist);
     } catch (err) {
@@ -26,9 +24,7 @@ const WatchList = () => {
   }, []);
   const removeItem = async (_id) => {
     try {
-      await axios.delete(
-        `https://walletx-backend.onrender.com/watchlist/${_id}`
-      );
+      await axios.delete(`http://localhost:3000/watchlist/${_id}`);
       // console.log(response.data);
       console.log(_id);
       alert('Removed from watchlist');
