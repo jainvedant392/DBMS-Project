@@ -21,7 +21,7 @@ const Api = () => {
   const toAdd = async (x) => {
     if (tickerName[x.trim()]) {
       try {
-        await axios.post('https://walletx-backend.onrender.com/watchlist', {
+        await axios.post('http://localhost:3000/watchlist', {
           asset_name: x,
           asset_id: tickerName[x.trim()],
         });

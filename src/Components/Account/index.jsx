@@ -3,7 +3,7 @@ import { Asset } from '../Asset';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 import Preloader from '../Preloader';
-
+axios.defaults.withCredentials = true;
 const assetList = [
   {
     name: 'Apple Inc',
@@ -83,9 +83,7 @@ const Account = () => {
   const navigate = useNavigate();
   const fetchData = async () => {
     try {
-      let response = await axios.get(
-        'https://walletx-backend.onrender.com/info'
-      );
+      let response = await axios.get('http://localhost:3000/users');
       console.log(response.data);
     } catch (err) {
       if (err.response && err.response.status === 401) {
