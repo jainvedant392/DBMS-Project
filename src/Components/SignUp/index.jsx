@@ -6,7 +6,6 @@ const SignUp = () => {
     username: '',
     password: '',
     email: '',
-    watchlist_items: 0,
   });
   const [usernameError, setUserNameError] = React.useState('');
   const [emailError, setEmailError] = React.useState('');
@@ -31,7 +30,7 @@ const SignUp = () => {
     e.preventDefault();
     try {
       const response = await axios.post(
-        'https://walletx-backend.onrender.com/signup',
+        'http://localhost:3000/signup',
         formData
       );
       console.log(response.data);
@@ -40,13 +39,12 @@ const SignUp = () => {
         username: '',
         password: '',
         email: '',
-        watchlist_items: 0,
       });
       setEmailError('');
       setPasswordError('');
       setUserNameError('');
     } catch (err) {
-      console.log(err.response.data.errors);
+      // console.log(err.response.data.errors);
       setUserNameError(err.response.data.errors.username);
       setEmailError(err.response.data.errors.email);
       setPasswordError(err.response.data.errors.password);
