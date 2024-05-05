@@ -36,7 +36,7 @@ const LogIn = () => {
       });
       setPasswordError('');
       setUserNameError('');
-      navigate('/testing');
+      navigate('/account');
     } catch (err) {
       console.log(err.response.data.errors);
       setUserNameError(err.response.data.errors.username);
