@@ -17,6 +17,7 @@ const Api = () => {
     'NIKE, Inc.': 'NKE',
     'Uber Technologies, Inc.': 'UBER',
     'NVIDIA Corporation': 'NVDA',
+    ETHUSDT: 'ETHUSDT',
   };
   const toAdd = async (x) => {
     if (tickerName[x.trim()]) {
