@@ -7,7 +7,7 @@ const WatchList = () => {
   const [data, setData] = React.useState([]);
   const fetchData = async () => {
     try {
-      let response = await axios.get('http://localhost:3000/watchlist');
+      let response = await axios.get('http://localhost:3000/getwatchlist');
       console.log(response.data.watchlist);
       setData(response.data.watchlist);
     } catch (err) {
@@ -24,8 +24,13 @@ const WatchList = () => {
   }, []);
   const removeItem = async (_id) => {
     try {
-      await axios.delete(`http://localhost:3000/watchlist/${_id}`);
-      // console.log(response.data);
+      await axios({
+        method: 'delete',
+        url: 'http://localhost:3000/deleteWatchlist',
+        data: {
+          asset_id: _id,
+        },
+      });
       console.log(_id);
       alert('Removed from watchlist');
       fetchData();

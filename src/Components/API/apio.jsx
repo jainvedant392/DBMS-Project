@@ -17,16 +17,16 @@ const Api = () => {
     'NIKE, Inc.': 'NKE',
     'Uber Technologies, Inc.': 'UBER',
     'NVIDIA Corporation': 'NVDA',
-    'ETHUSDT': 'ETHUSDT',
-    'BTCUSDT': 'BTCUSDT',
-    'DOGEUSDT': 'DOGEUSDT',
-    'MATICUSDT': 'MATICUSDT',
-    'XRPUSDT': 'XRPUSDT',
-    'BNBUSDT': 'BNBUSDT',
-    'LINAUSDT': 'LINAUSDT',
-    'LUNAUSDT': 'LUNAUSDT',
-    'LINKUSDT': 'LINKUSDT',
-    'ROSEUSDT': 'ROSEUSDT',
+    ETHUSDT: 'ETHUSDT',
+    BTCUSDT: 'BTCUSDT',
+    DOGEUSDT: 'DOGEUSDT',
+    MATICUSDT: 'MATICUSDT',
+    XRPUSDT: 'XRPUSDT',
+    BNBUSDT: 'BNBUSDT',
+    LINAUSDT: 'LINAUSDT',
+    LUNAUSDT: 'LUNAUSDT',
+    LINKUSDT: 'LINKUSDT',
+    ROSEUSDT: 'ROSEUSDT',
   };
   const toAdd = async (x) => {
     if (tickerName[x.trim()]) {
@@ -52,7 +52,7 @@ const Api = () => {
   };
 
   //'c46fd9bc6fmshc85441129815171p1477a5jsn819d06260da1'
-  const Key = 'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830';
+  const Key = '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40';
   const Host = 'yahoo-finance15.p.rapidapi.com';
 
   let a = [
@@ -699,7 +699,7 @@ const Api = () => {
         params: { symbol: 'BTCUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -743,7 +743,7 @@ const Api = () => {
         params: { symbol: 'ETHUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -787,7 +787,7 @@ const Api = () => {
         params: { symbol: 'DOGEUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -831,7 +831,7 @@ const Api = () => {
         params: { symbol: 'MATICUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -875,7 +875,7 @@ const Api = () => {
         params: { symbol: 'XRPUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -919,7 +919,7 @@ const Api = () => {
         params: { symbol: 'BNBUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -963,7 +963,7 @@ const Api = () => {
         params: { symbol: 'LINAUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -1007,7 +1007,7 @@ const Api = () => {
         params: { symbol: 'LUNAUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -1051,7 +1051,7 @@ const Api = () => {
         params: { symbol: 'LINKUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
@@ -1095,7 +1095,7 @@ const Api = () => {
         params: { symbol: 'ROSEUSDT' },
         headers: {
           'X-RapidAPI-Key':
-            'f9b45eef3emsh649e7838f2789a2p111419jsnafe7a7a21830',
+            '37d202a97bmsh9022586ff2646aap1bdcf1jsneac1e6daec40',
           'X-RapidAPI-Host': 'binance43.p.rapidapi.com',
         },
       };
